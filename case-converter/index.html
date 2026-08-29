@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Converter - Convert Text to Uppercase, Lowercase &amp; Title Case Online</title>
+  <meta name="description" content="Free online case converter. Instantly convert text to uppercase, lowercase, title case, sentence case, camelCase, PascalCase, snake_case or kebab-case. Copy with one click." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourdomain.com/case-converter/" />
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+    function track(name, params) { if (typeof gtag === 'function') { gtag('event', name, params); } }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Case Converter - Convert Text Case Online Free" />
+  <meta property="og:description" content="Convert any text to uppercase, lowercase, title case, sentence case and more. Free, fast, no sign-up." />
+  <meta property="og:url" content="https://yourdomain.com/case-converter/" />
+
+  <!-- JSON-LD: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Case Converter",
+    "url": "https://yourdomain.com/case-converter/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Free online tool to convert text between uppercase, lowercase, title case, sentence case, camelCase, PascalCase, snake_case and kebab-case."
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a case converter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A case converter is a free online tool that changes the capitalization of your text. You can turn lowercase text into uppercase, convert to title case, sentence case, camelCase, PascalCase, snake_case or kebab-case in one click."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I convert text to title case?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Paste or type your text into the input box above, then click the Title Case button. The tool capitalizes the first letter of every word instantly, and you can copy the result with one click."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this case converter free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. This case converter is 100% free, works in your browser, and never requires a sign-up or download."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --ink: #1a202c;
+      --muted: #64748b;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --border: #e2e8f0;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 16px; }
+
+    header { padding: 18px 0 6px; }
+    .brand { font-weight: 700; font-size: 18px; color: var(--accent); text-decoration: none; }
+    .back { display: inline-block; margin-right: 10px; padding: 6px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; vertical-align: middle; }
+    .back:hover { color: var(--accent); border-color: var(--accent); }
+    .nav { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .nav a {
+      font-size: 13px; color: var(--muted); text-decoration: none;
+      background: var(--card); border: 1px solid var(--border);
+      padding: 5px 12px; border-radius: 999px;
+    }
+    .nav a:hover { color: var(--accent); border-color: var(--accent); }
+
+    .hero { padding: 22px 0 14px; }
+    h1 { font-size: 28px; line-height: 1.25; letter-spacing: -0.02em; }
+    .hero p { color: var(--muted); margin-top: 8px; font-size: 16px; }
+
+    .tool { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: 0 1px 3px rgba(15,23,42,.05); }
+    textarea {
+      width: 100%; min-height: 130px; resize: vertical;
+      border: 1px solid var(--border); border-radius: 10px;
+      padding: 12px; font-size: 15px; font-family: inherit; color: var(--ink);
+    }
+    textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+    .btns { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+    button {
+      border: 1px solid var(--border); background: #fff; color: var(--ink);
+      padding: 8px 14px; border-radius: 9px; font-size: 14px; cursor: pointer;
+      transition: all .15s ease;
+    }
+    button:hover { border-color: var(--accent); color: var(--accent); }
+    button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+    button.primary:hover { background: var(--accent-dark); color: #fff; }
+    .meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    #output {
+      width: 100%; min-height: 110px; background: #f8fafc;
+      border: 1px dashed var(--border); border-radius: 10px; padding: 12px;
+      font-size: 15px; white-space: pre-wrap; word-break: break-word;
+    }
+
+    .ad {
+      margin: 18px 0; border: 1px dashed var(--border); border-radius: var(--radius);
+      background: #eef2f7; min-height: 90px;
+      display: flex; align-items: center; justify-content: center;
+      color: #94a3b8; font-size: 13px; text-align: center; padding: 10px;
+    }
+
+    section { margin-top: 26px; }
+    h2 { font-size: 20px; letter-spacing: -0.01em; margin-bottom: 10px; }
+    section p, section li { color: #334155; font-size: 15px; }
+    ul { padding-left: 20px; }
+    .related { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+    .related a {
+      display: block; background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 14px; text-decoration: none; color: var(--ink);
+      font-size: 14px; font-weight: 600;
+    }
+    .related a:hover { border-color: var(--accent); color: var(--accent); }
+    .related a span { display: block; font-weight: 400; font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    details { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; }
+    summary { cursor: pointer; font-weight: 600; font-size: 15px; }
+    details p { margin-top: 8px; color: #475569; }
+
+    footer { margin: 30px 0 24px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; text-align: center; }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 23px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="back" href="../">← All Tools</a>
+      <a class="brand" href="../">CaseConverter</a>
+      <nav class="nav" aria-label="Related tools">
+        <a href="#uppercase">Uppercase</a>
+        <a href="#title-case">Title Case</a>
+        <a href="../random-group-generator/">Group Generator</a>
+        <a href="../wheel-spinner/">Wheel Spinner</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <h1>Case Converter — Convert Text to Uppercase, Lowercase &amp; Title Case Online</h1>
+      <p>Free online case converter. Paste your text and switch between 8 capitalization styles in one click — no sign-up, no download.</p>
+    </div>
+
+    <main>
+      <div class="tool">
+        <textarea id="input" placeholder="Paste or type your text here..." aria-label="Text to convert"></textarea>
+        <div class="btns">
+          <button type="button" onclick="convert('upper')">UPPERCASE</button>
+          <button type="button" onclick="convert('lower')">lowercase</button>
+          <button type="button" onclick="convert('title')">Title Case</button>
+          <button type="button" onclick="convert('sentence')">Sentence case</button>
+          <button type="button" onclick="convert('camel')">camelCase</button>
+          <button type="button" onclick="convert('pascal')">PascalCase</button>
+          <button type="button" onclick="convert('snake')">snake_case</button>
+          <button type="button" onclick="convert('kebab')">kebab-case</button>
+          <button type="button" class="primary" onclick="copyOutput()">Copy Result</button>
+          <button type="button" onclick="clearAll()">Clear</button>
+        </div>
+        <div class="meta">
+          <span id="stats">0 characters · 0 words</span>
+          <span id="copied" aria-live="polite"></span>
+        </div>
+        <div id="output" aria-label="Converted text"></div>
+      </div>
+
+      <div class="ad" role="complementary" aria-label="Advertisement">
+        AdSense placeholder — paste your ad unit here after approval
+      </div>
+
+      <section id="about">
+        <h2>What Is a Case Converter?</h2>
+        <p>A case converter changes the capitalization of your text instantly. Whether you pasted a block of ALL-CAPS text that needs fixing, or you need a headline in Title Case, or a variable name in camelCase for your code — this tool does it for free, right in your browser. Your text never leaves your device.</p>
+      </section>
+
+      <section id="styles">
+        <h2>Supported Text Case Styles</h2>
+        <ul>
+          <li id="uppercase"><strong>UPPERCASE</strong> — converts every letter to capital letters.</li>
+          <li id="lowercase"><strong>lowercase</strong> — converts every letter to small letters.</li>
+          <li id="title-case"><strong>Title Case</strong> — capitalizes the first letter of every word.</li>
+          <li id="sentence-case"><strong>Sentence case</strong> — capitalizes the first letter of each sentence.</li>
+          <li><strong>camelCase</strong> — joins words and capitalizes each word after the first (for code).</li>
+          <li><strong>PascalCase</strong> — joins words and capitalizes every word (for code).</li>
+          <li><strong>snake_case</strong> — joins words with underscores, all lowercase.</li>
+          <li><strong>kebab-case</strong> — joins words with hyphens, all lowercase.</li>
+        </ul>
+      </section>
+
+      <section id="related">
+        <h2>Related Free Text Tools</h2>
+        <div class="related">
+          <a href="#uppercase">Uppercase Converter <span>Turn text to ALL CAPS</span></a>
+          <a href="#title-case">Title Case Converter <span>Capitalize each word</span></a>
+          <a href="../random-group-generator/">Random Group Generator <span>Split names into groups</span></a>
+          <a href="../wheel-spinner/">Wheel Spinner <span>Spin a random name or decision</span></a>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>What is a case converter?</summary>
+          <p>A case converter is a free online tool that changes the capitalization of your text. You can turn lowercase text into uppercase, convert to title case, sentence case, camelCase, PascalCase, snake_case or kebab-case in one click.</p>
+        </details>
+        <details>
+          <summary>How do I convert text to title case?</summary>
+          <p>Paste or type your text into the input box, then click the "Title Case" button. The tool capitalizes the first letter of every word instantly, and you can copy the result with one click.</p>
+        </details>
+        <details>
+          <summary>Is this case converter free to use?</summary>
+          <p>Yes. This case converter is 100% free, runs in your browser, and never requires a sign-up or a download.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <p>CaseConverter — a free online text case conversion tool.</p>
+    </footer>
+  </div>
+
+  <script>
+    var input = document.getElementById('input');
+    var output = document.getElementById('output');
+    var stats = document.getElementById('stats');
+    var copied = document.getElementById('copied');
+
+    function titleCase(s) {
+      return s.toLowerCase().replace(/(^|\s|[\(\[\{\.\,\!\?\-])([a-z])/g, function(m, p1, p2) { return p1 + p2.toUpperCase(); });
+    }
+
+    function sentenceCase(s) {
+      return s.toLowerCase().replace(/(^\s*|[.!?]\s+)([a-z])/g, function(m, p1, p2) { return p1 + p2.toUpperCase(); });
+    }
+
+    function toCamel(s) {
+      var words = s.trim().split(/[\s_\-]+/).filter(Boolean);
+      return words.map(function(w, i) {
+        w = w.toLowerCase();
+        return i === 0 ? w : w.charAt(0).toUpperCase() + w.slice(1);
+      }).join('');
+    }
+
+    function toPascal(s) {
+      var words = s.trim().split(/[\s_\-]+/).filter(Boolean);
+      return words.map(function(w) {
+        w = w.toLowerCase();
+        return w.charAt(0).toUpperCase() + w.slice(1);
+      }).join('');
+    }
+
+    function join(s, sep) {
+      return s.trim().split(/[\s_\-]+/).filter(Boolean).map(function(w){ return w.toLowerCase(); }).join(sep);
+    }
+
+    function convert(mode) {
+      var text = input.value;
+      var result = '';
+      switch (mode) {
+        case 'upper': result = text.toUpperCase(); break;
+        case 'lower': result = text.toLowerCase(); break;
+        case 'title': result = titleCase(text); break;
+        case 'sentence': result = sentenceCase(text); break;
+        case 'camel': result = toCamel(text); break;
+        case 'pascal': result = toPascal(text); break;
+        case 'snake': result = join(text, '_'); break;
+        case 'kebab': result = join(text, '-'); break;
+      }
+      output.textContent = result;
+      copied.textContent = '';
+      updateStats(text);
+      track('convert', { case_style: mode });
+    }
+
+    function updateStats(text) {
+      var chars = text.length;
+      var words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+      stats.textContent = chars + ' characters · ' + words + ' words';
+    }
+
+    function copyOutput() {
+      var text = output.textContent;
+      if (!text) { copied.textContent = 'Nothing to copy'; return; }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          copied.textContent = 'Copied!';
+          track('copy');
+        }).catch(function() { fallbackCopy(text); });
+      } else { fallbackCopy(text); }
+    }
+
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); copied.textContent = 'Copied!'; track('copy'); }
+      catch (e) { copied.textContent = 'Copy failed'; }
+      document.body.removeChild(ta);
+    }
+
+    function clearAll() {
+      input.value = ''; output.textContent = ''; copied.textContent = '';
+      updateStats('');
+    }
+
+    input.addEventListener('input', function() { updateStats(input.value); });
+  </script>
+</body>
+</html>
