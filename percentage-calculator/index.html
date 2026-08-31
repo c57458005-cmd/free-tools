@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Percentage Calculator - Calculate Percentages Online Free</title>
+  <meta name="description" content="Free online percentage calculator. Find what X% of Y is, what percent X is of Y, and percentage change. Instant results, no sign-up." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://c57458005-cmd.github.io/free-tools/percentage-calculator/" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W9M7STTLM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4W9M7STTLM');
+    function track(name, params) { if (typeof gtag === 'function') { gtag('event', name, params); } }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Percentage Calculator - Calculate Percentages Online Free" />
+  <meta property="og:description" content="Calculate percentages instantly: X% of Y, what percent X is of Y, and percentage change." />
+  <meta property="og:url" content="https://c57458005-cmd.github.io/free-tools/percentage-calculator/" />
+
+  <!-- JSON-LD: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Percentage Calculator",
+    "url": "https://c57458005-cmd.github.io/free-tools/percentage-calculator/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Free online tool to calculate percentages."
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate a percentage of a number?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the first calculator above: enter the percentage and the number, then click Calculate. For example, 20% of 80 is 16."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate percentage change?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the percentage change calculator: subtract the old value from the new value, divide by the old value, then multiply by 100. The tool does this automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this percentage calculator free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. This percentage calculator is 100% free, runs in your browser, and never requires a sign-up or download."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root { --bg:#f6f8fb; --card:#fff; --ink:#1a202c; --muted:#64748b; --accent:#059669; --accent-dark:#047857; --border:#e2e8f0; --radius:14px; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; }
+    .wrap { max-width:760px; margin:0 auto; padding:16px; }
+    header { padding:18px 0 6px; }
+.back { display:inline-flex; align-items:center; gap:4px; padding:8px 14px; background:var(--card); border:1px solid var(--border); border-radius:999px; font-size:13px; font-weight:600; color:var(--muted); text-decoration:none; }
+    .back:hover { color:var(--accent); border-color:var(--accent); }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+
+    .title { font-size:24px; letter-spacing:-0.02em; margin:0; line-height:1.3; }
+    .sub { color:var(--muted); margin-top:6px; font-size:15px; }
+h1 { font-size:28px; line-height:1.25; letter-spacing:-0.02em; }
+.tool { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:0 1px 3px rgba(15,23,42,.05); }
+    .mode { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
+    .mode button { flex:1; min-width:120px; border:1px solid var(--border); background:#fff; color:var(--ink); padding:9px 16px; border-radius:9px; font-size:14px; cursor:pointer; min-height:44px; transition:all .15s ease; }
+    .mode button.active { background:#2563eb; border-color:#2563eb; color:#fff; font-weight:600; }
+    .fields { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+    .field { flex:1; min-width:140px; display:flex; flex-direction:column; }
+    .field label { font-size:13px; color:var(--muted); margin-bottom:4px; }
+    input[type=number] { border:1px solid var(--border); border-radius:10px; padding:12px; font-size:15px; font-family:inherit; color:var(--ink); min-height:44px; }
+    input[type=number]:focus { outline:2px solid var(--accent); outline-offset:-1px; }
+    .result { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; padding:16px; font-size:18px; font-weight:700; color:var(--accent-dark); min-height:56px; word-break:break-word; }
+    .btns { display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap; }
+    button { border:1px solid var(--border); background:#fff; color:var(--ink); padding:9px 16px; border-radius:9px; font-size:14px; cursor:pointer; transition:all .15s ease; min-height:40px; }
+    button:hover { border-color:var(--accent); color:var(--accent); }
+    button.primary { background:#2563eb; border-color:#2563eb; color:#fff; font-weight:600; min-height:40px; }
+    button.primary:hover { background:#1d4ed8; color:#fff; }
+section { margin-top:26px; }
+    h2 { font-size:20px; letter-spacing:-0.01em; margin-bottom:10px; }
+    section p, section li { color:#334155; font-size:15px; }
+    ul, ol { padding-left:20px; }
+    .related { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:10px; }
+    .related a { display:block; background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px 14px; text-decoration:none; color:var(--ink); font-size:14px; font-weight:600; }
+    .related a:hover { border-color:var(--accent); color:var(--accent); }
+    .related a span { display:block; font-weight:400; font-size:12px; color:var(--muted); margin-top:2px; }
+    details { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px 14px; margin-bottom:10px; }
+    summary { cursor:pointer; font-weight:600; font-size:15px; }
+    details p { margin-top:8px; color:#475569; }
+    footer { margin:30px 0 24px; padding-top:16px; border-top:1px solid var(--border); color:var(--muted); font-size:13px; text-align:center; }
+    @media (max-width:480px) { h1 { font-size:23px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="topbar">
+        <h1 class="title">Percentage Calculator</h1>
+        <a class="back" href="../">← All Tools</a>
+      </div>
+      <p class="sub">Calculate X% of Y, what percent X is of Y, and percentage change instantly.</p>
+    </header>
+<main>
+      <div class="tool">
+        <div class="mode">
+          <button type="button" class="active" data-mode="of">X% of Y</button>
+          <button type="button" data-mode="what">X is what % of Y</button>
+          <button type="button" data-mode="change">% change</button>
+        </div>
+        <div class="fields" id="fields">
+          <div class="field"><label for="a">Percentage %</label><input type="number" id="a" value="20" /></div>
+          <div class="field"><label for="b">Number</label><input type="number" id="b" value="80" /></div>
+        </div>
+        <div class="btns">
+          <button type="button" class="primary" onclick="calculate()">Calculate</button>
+        </div>
+        <div class="result" id="result" aria-live="polite">20% of 80 = 16</div>
+      </div>
+<section id="how-to">
+        <h2>How to Calculate Percentages</h2>
+        <ol>
+          <li>Pick the calculation you need from the three buttons above.</li>
+          <li>Enter your numbers and click "Calculate".</li>
+          <li>The result appears instantly with a clear explanation.</li>
+        </ol>
+        <p>All calculations run locally in your browser — no data is sent anywhere.</p>
+      </section>
+
+      <section id="formulas">
+        <h2>Percentage Formulas</h2>
+        <ul>
+          <li><strong>X% of Y</strong> = (X ÷ 100) × Y</li>
+          <li><strong>X is what % of Y</strong> = (X ÷ Y) × 100</li>
+          <li><strong>Percentage change</strong> = ((New − Old) ÷ Old) × 100</li>
+        </ul>
+      </section>
+
+      <section id="related">
+        <h2>Related Free Tools</h2>
+        <div class="related">
+          <a href="../word-counter/">Word Counter <span>Count words and characters</span></a>
+          <a href="../random-number-generator/">Random Number Generator <span>Generate random numbers</span></a>
+          <a href="../case-converter/">Case Converter <span>Convert text case online</span></a>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>How do I calculate a percentage of a number?</summary>
+          <p>Use the first calculator above: enter the percentage and the number, then click Calculate. For example, 20% of 80 is 16.</p>
+        </details>
+        <details>
+          <summary>How do I calculate percentage change?</summary>
+          <p>Use the percentage change calculator: subtract the old value from the new value, divide by the old value, then multiply by 100. The tool does this automatically.</p>
+        </details>
+        <details>
+          <summary>How do I find what percent one number is of another?</summary>
+          <p>Use the second calculator: divide the first number by the second, then multiply by 100. For example, 20 is 25% of 80.</p>
+        </details>
+        <details>
+          <summary>Is this percentage calculator free?</summary>
+          <p>Yes. This percentage calculator is 100% free, runs in your browser, and never requires a sign-up or download.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer><p>FreeTools — free online tools for everyday work.</p></footer>
+  </div>
+
+  <script>
+    var mode = 'of';
+    var modes = {
+      of: { aLabel: 'Percentage %', bLabel: 'Number' },
+      what: { aLabel: 'Part (X)', bLabel: 'Whole (Y)' },
+      change: { aLabel: 'Old value', bLabel: 'New value' }
+    };
+
+    document.querySelectorAll('.mode button').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.mode button').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        mode = btn.dataset.mode;
+        document.getElementById('fields').querySelectorAll('label')[0].textContent = modes[mode].aLabel;
+        document.getElementById('fields').querySelectorAll('label')[1].textContent = modes[mode].bLabel;
+        document.getElementById('result').textContent = '';
+      });
+    });
+
+    function calculate() {
+      var a = parseFloat(document.getElementById('a').value);
+      var b = parseFloat(document.getElementById('b').value);
+      var out = document.getElementById('result');
+      if (isNaN(a) || isNaN(b)) { out.textContent = 'Please enter valid numbers.'; return; }
+
+      var text;
+      if (mode === 'of') {
+        var r = (a / 100) * b;
+        text = a + '% of ' + b + ' = ' + r;
+      } else if (mode === 'what') {
+        if (b === 0) { text = 'Y cannot be zero.'; }
+        else { var p = (a / b) * 100; text = a + ' is ' + p + '% of ' + b; }
+      } else {
+        if (a === 0) { text = 'Old value cannot be zero.'; }
+        else { var c = ((b - a) / a) * 100; text = 'Change from ' + a + ' to ' + b + ' = ' + c + '%'; }
+      }
+      out.textContent = text;
+      track('calculate_percentage', { mode: mode });
+    }
+  </script>
+</body>
+</html>

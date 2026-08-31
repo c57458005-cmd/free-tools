@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://c57458005-cmd.github.io/free-tools/sitemap.xml

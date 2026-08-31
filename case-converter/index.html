@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Case Converter - Convert Text to Uppercase, Lowercase &amp; Title Case Online</title>
-  <meta name="description" content="Free online case converter. Instantly convert text to uppercase, lowercase, title case, sentence case, camelCase, PascalCase, snake_case or kebab-case. Copy with one click." />
+  <title>Case Converter - Uppercase, Lowercase &amp; Title Case Online</title>
+  <meta name="description" content="Free case converter. Instantly convert text to uppercase, lowercase, title case, sentence case and more. Copy with one click." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://c57458005-cmd.github.io/free-tools/case-converter/" />
 
@@ -94,22 +94,14 @@
     .wrap { max-width: 760px; margin: 0 auto; padding: 16px; }
 
     header { padding: 18px 0 6px; }
-    .brand { font-weight: 700; font-size: 18px; color: var(--accent); text-decoration: none; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+
+    .title { font-size:24px; letter-spacing:-0.02em; margin:0; line-height:1.3; }
+    .sub { color:var(--muted); margin-top:6px; font-size:15px; }
     .back { display: inline-block; margin-right: 10px; padding: 6px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; vertical-align: middle; }
     .back:hover { color: var(--accent); border-color: var(--accent); }
-    .nav { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
-    .nav a {
-      font-size: 13px; color: var(--muted); text-decoration: none;
-      background: var(--card); border: 1px solid var(--border);
-      padding: 5px 12px; border-radius: 999px;
-    }
-    .nav a:hover { color: var(--accent); border-color: var(--accent); }
-
-    .hero { padding: 22px 0 14px; }
-    h1 { font-size: 28px; line-height: 1.25; letter-spacing: -0.02em; }
-    .hero p { color: var(--muted); margin-top: 8px; font-size: 16px; }
-
-    .tool { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: 0 1px 3px rgba(15,23,42,.05); }
+h1 { font-size: 28px; line-height: 1.25; letter-spacing: -0.02em; word-break: break-word; overflow-wrap: anywhere; }
+.tool { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: 0 1px 3px rgba(15,23,42,.05); }
     textarea {
       width: 100%; min-height: 130px; resize: vertical;
       border: 1px solid var(--border); border-radius: 10px;
@@ -119,27 +111,19 @@
     .btns { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
     button {
       border: 1px solid var(--border); background: #fff; color: var(--ink);
-      padding: 8px 14px; border-radius: 9px; font-size: 14px; cursor: pointer;
-      transition: all .15s ease;
+      padding: 9px 16px; border-radius: 9px; font-size: 14px; cursor: pointer;
+      transition: all .15s ease; min-height: 40px;
     }
     button:hover { border-color: var(--accent); color: var(--accent); }
-    button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
-    button.primary:hover { background: var(--accent-dark); color: #fff; }
+    button.primary { background: #2563eb; border-color: #2563eb; color: #fff; font-weight: 600; }
+    button.primary:hover { background: #1d4ed8; color: #fff; }
     .meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
     #output {
       width: 100%; min-height: 110px; background: #f8fafc;
       border: 1px dashed var(--border); border-radius: 10px; padding: 12px;
       font-size: 15px; white-space: pre-wrap; word-break: break-word;
     }
-
-    .ad {
-      margin: 18px 0; border: 1px dashed var(--border); border-radius: var(--radius);
-      background: #eef2f7; min-height: 90px;
-      display: flex; align-items: center; justify-content: center;
-      color: #94a3b8; font-size: 13px; text-align: center; padding: 10px;
-    }
-
-    section { margin-top: 26px; }
+section { margin-top: 26px; }
     h2 { font-size: 20px; letter-spacing: -0.01em; margin-bottom: 10px; }
     section p, section li { color: #334155; font-size: 15px; }
     ul { padding-left: 20px; }
@@ -160,28 +144,20 @@
 
     @media (max-width: 480px) {
       h1 { font-size: 23px; }
-    }
+      button { min-height: 44px; padding: 10px 14px; }
+}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <a class="back" href="../">← All Tools</a>
-      <a class="brand" href="../">CaseConverter</a>
-      <nav class="nav" aria-label="Related tools">
-        <a href="#uppercase">Uppercase</a>
-        <a href="#title-case">Title Case</a>
-        <a href="../random-group-generator/">Group Generator</a>
-        <a href="../wheel-spinner/">Wheel Spinner</a>
-      </nav>
+      <div class="topbar">
+        <h1 class="title">Case Converter</h1>
+        <a class="back" href="../">← All Tools</a>
+      </div>
+      <p class="sub">Convert text to uppercase, lowercase, title case and more instantly.</p>
     </header>
-
-    <div class="hero">
-      <h1>Case Converter — Convert Text to Uppercase, Lowercase &amp; Title Case Online</h1>
-      <p>Free online case converter. Paste your text and switch between 8 capitalization styles in one click — no sign-up, no download.</p>
-    </div>
-
-    <main>
+<main>
       <div class="tool">
         <textarea id="input" placeholder="Paste or type your text here..." aria-label="Text to convert"></textarea>
         <div class="btns">
@@ -202,12 +178,7 @@
         </div>
         <div id="output" aria-label="Converted text"></div>
       </div>
-
-      <div class="ad" role="complementary" aria-label="Advertisement">
-        AdSense placeholder — paste your ad unit here after approval
-      </div>
-
-      <section id="about">
+<section id="about">
         <h2>What Is a Case Converter?</h2>
         <p>A case converter changes the capitalization of your text instantly. Whether you pasted a block of ALL-CAPS text that needs fixing, or you need a headline in Title Case, or a variable name in camelCase for your code — this tool does it for free, right in your browser. Your text never leaves your device.</p>
       </section>
@@ -249,6 +220,14 @@
         <details>
           <summary>Is this case converter free to use?</summary>
           <p>Yes. This case converter is 100% free, runs in your browser, and never requires a sign-up or a download.</p>
+        </details>
+        <details>
+          <summary>Does this tool work on mobile?</summary>
+          <p>Yes. The case converter is fully responsive and works on phones, tablets and desktops alike.</p>
+        </details>
+        <details>
+          <summary>Is my text kept private?</summary>
+          <p>Yes. All conversion happens locally in your browser. Your text never leaves your device and is never stored or uploaded.</p>
         </details>
       </section>
     </main>

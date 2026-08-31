@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator - Free Online Basic Calculator</title>
+  <meta name="description" content="Free online calculator for basic arithmetic: add, subtract, multiply and divide. Simple, fast and works right in your browser. No sign-up needed." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://c57458005-cmd.github.io/free-tools/calculator/" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W9M7STTLM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4W9M7STTLM');
+    function track(name, params) { if (typeof gtag === 'function') { gtag('event', name, params); } }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Calculator - Free Online Basic Calculator" />
+  <meta property="og:description" content="Simple free online calculator for addition, subtraction, multiplication and division." />
+  <meta property="og:url" content="https://c57458005-cmd.github.io/free-tools/calculator/" />
+
+  <!-- JSON-LD: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculator",
+    "url": "https://c57458005-cmd.github.io/free-tools/calculator/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Free online calculator for basic arithmetic."
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I use this calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Click the number and operator buttons to build your calculation, then press the equals button (=) to see the result. You can also use your keyboard."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this calculator free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. This calculator is 100% free, runs in your browser, and never requires a sign-up or download."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root { --bg:#f6f8fb; --card:#fff; --ink:#1a202c; --muted:#64748b; --accent:#2563eb; --accent-dark:#1d4ed8; --border:#e2e8f0; --radius:14px; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; }
+    .wrap { max-width:760px; margin:0 auto; padding:16px; }
+    header { padding:18px 0 6px; }
+.back { display:inline-flex; align-items:center; gap:4px; padding:8px 14px; background:var(--card); border:1px solid var(--border); border-radius:999px; font-size:13px; font-weight:600; color:var(--muted); text-decoration:none; }
+    .back:hover { color:var(--accent); border-color:var(--accent); }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+
+    .title { font-size:24px; letter-spacing:-0.02em; margin:0; line-height:1.3; }
+    .sub { color:var(--muted); margin-top:6px; font-size:15px; }
+h1 { font-size:28px; line-height:1.25; letter-spacing:-0.02em; }
+.tool { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:0 1px 3px rgba(15,23,42,.05); }
+    .expression { width:100%; min-height:26px; padding:0 6px 8px; font-size:15px; color:var(--muted); text-align:right; word-break:break-all; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+    .history { width:100%; max-height:120px; overflow-y:auto; background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:8px 12px; margin-bottom:8px; font-size:14px; color:var(--muted); text-align:right; }
+    .history div { line-height:24px; white-space:nowrap; }
+    .history::-webkit-scrollbar { width:6px; }
+    .history::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:3px; }
+    .screen { width:100%; min-height:72px; background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding:14px; font-size:32px; font-weight:700; text-align:right; word-break:break-all; display:flex; align-items:center; justify-content:flex-end; margin-bottom:14px; }
+    .keys { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+    .keys button { border:1px solid var(--border); background:#fff; color:var(--ink); padding:16px 0; border-radius:10px; font-size:18px; cursor:pointer; min-height:52px; transition:all .15s ease; }
+    .keys button:hover { border-color:var(--accent); color:var(--accent); }
+    .keys .op { background:#eef2ff; color:var(--accent); font-weight:600; }
+    .keys .fn { background:#f1f5f9; color:var(--muted); font-weight:600; }
+    .keys .eq { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+    .keys .eq:hover { background:var(--accent-dark); color:#fff; }
+section { margin-top:26px; }
+    h2 { font-size:20px; letter-spacing:-0.01em; margin-bottom:10px; }
+    section p, section li { color:#334155; font-size:15px; }
+    ul, ol { padding-left:20px; }
+    .related { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:10px; }
+    .related a { display:block; background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px 14px; text-decoration:none; color:var(--ink); font-size:14px; font-weight:600; }
+    .related a:hover { border-color:var(--accent); color:var(--accent); }
+    .related a span { display:block; font-weight:400; font-size:12px; color:var(--muted); margin-top:2px; }
+    details { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px 14px; margin-bottom:10px; }
+    summary { cursor:pointer; font-weight:600; font-size:15px; }
+    details p { margin-top:8px; color:#475569; }
+    footer { margin:30px 0 24px; padding-top:16px; border-top:1px solid var(--border); color:var(--muted); font-size:13px; text-align:center; }
+    @media (max-width:480px) {
+      h1 { font-size:23px; }
+      .screen { font-size:26px; min-height:60px; }
+      .keys button { min-height:56px; font-size:17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="topbar">
+        <h1 class="title">Calculator</h1>
+        <a class="back" href="../">← All Tools</a>
+      </div>
+      <p class="sub">Add, subtract, multiply and divide instantly — no sign-up needed.</p>
+    </header>
+<main>
+      <div class="tool">
+        <div class="history" id="history" aria-label="Calculation history"></div>
+        <div class="expression" id="expression" aria-live="polite">&nbsp;</div>
+        <div class="screen" id="screen" aria-live="polite">0</div>
+        <div class="keys">
+          <button type="button" class="fn" onclick="clearAll()">C</button>
+          <button type="button" class="fn" onclick="backspace()">⌫</button>
+          <button type="button" class="fn" onclick="percent()">%</button>
+          <button type="button" class="op" onclick="setOp('divide')">÷</button>
+          <button type="button" onclick="inputNumber(7)">7</button>
+          <button type="button" onclick="inputNumber(8)">8</button>
+          <button type="button" onclick="inputNumber(9)">9</button>
+          <button type="button" class="op" onclick="setOp('multiply')">×</button>
+          <button type="button" onclick="inputNumber(4)">4</button>
+          <button type="button" onclick="inputNumber(5)">5</button>
+          <button type="button" onclick="inputNumber(6)">6</button>
+          <button type="button" class="op" onclick="setOp('subtract')">−</button>
+          <button type="button" onclick="inputNumber(1)">1</button>
+          <button type="button" onclick="inputNumber(2)">2</button>
+          <button type="button" onclick="inputNumber(3)">3</button>
+          <button type="button" class="op" onclick="setOp('add')">+</button>
+          <button type="button" onclick="toggleSign()">±</button>
+          <button type="button" onclick="inputNumber(0)">0</button>
+          <button type="button" onclick="inputDecimal()">.</button>
+          <button type="button" class="eq" onclick="equals()">=</button>
+        </div>
+      </div>
+<section id="how-to">
+        <h2>How to Use This Calculator</h2>
+        <ol>
+          <li>Click the number and operator buttons to build your calculation.</li>
+          <li>Press the equals button (=) to see the result.</li>
+          <li>Use C to clear everything, ⌫ to delete the last digit, and % for percentages.</li>
+          <li>You can also type with your keyboard — numbers and + - * / work.</li>
+        </ol>
+        <p>Everything runs locally in your browser — nothing is uploaded or stored.</p>
+      </section>
+
+      <section id="related">
+        <h2>Related Free Tools</h2>
+        <div class="related">
+          <a href="../percentage-calculator/">Percentage Calculator <span>Calculate percentages</span></a>
+          <a href="../random-number-generator/">Random Number Generator <span>Generate random numbers</span></a>
+          <a href="../case-converter/">Case Converter <span>Convert text case online</span></a>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>How do I use this calculator?</summary>
+          <p>Click the number and operator buttons to build your calculation, then press the equals button (=) to see the result. You can also use your keyboard.</p>
+        </details>
+        <details>
+          <summary>Can I use the keyboard?</summary>
+          <p>Yes. Use the number keys for digits, and + - * / for operations. Press Enter for equals, Backspace to delete, and Escape to clear.</p>
+        </details>
+        <details>
+          <summary>Is this calculator free?</summary>
+          <p>Yes. This calculator is 100% free, runs in your browser, and never requires a sign-up or download.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer><p>FreeTools — free online tools for everyday work.</p></footer>
+  </div>
+
+  <script>
+    var display = document.getElementById('screen');
+    var currentInput = '0';
+    var firstOperand = null;
+    var operator = null;
+    var waitingForSecond = false;
+
+    function opSymbol(op) {
+      return { add:'+', subtract:'−', multiply:'×', divide:'÷' }[op] || '';
+    }
+
+    function formatNum(n) {
+      if (typeof n === 'string') return n;
+      if (Number.isInteger(n)) return String(n);
+      return String(parseFloat(n.toFixed(10)));
+    }
+
+    function render() {
+      var expr = '';
+      if (firstOperand === null) {
+        expr = currentInput;
+      } else if (waitingForSecond) {
+        expr = formatNum(firstOperand) + ' ' + opSymbol(operator);
+      } else {
+        expr = formatNum(firstOperand) + ' ' + opSymbol(operator) + ' ' + currentInput;
+      }
+      document.getElementById('expression').textContent = expr;
+    }
+
+    function updateDisplay() {
+      display.textContent = currentInput;
+      render();
+    }
+
+    var historyEntries = [];
+
+    function addHistory(expr, result) {
+      historyEntries.push(expr + ' = ' + result);
+      if (historyEntries.length > 100) historyEntries.shift();
+      renderHistory();
+    }
+
+    function renderHistory() {
+      var h = document.getElementById('history');
+      h.innerHTML = '';
+      historyEntries.forEach(function(line) {
+        var d = document.createElement('div');
+        d.textContent = line;
+        h.appendChild(d);
+      });
+      h.scrollTop = h.scrollHeight;
+    }
+
+    function inputNumber(num) {
+      if (waitingForSecond) { currentInput = String(num); waitingForSecond = false; }
+      else { currentInput = currentInput === '0' ? String(num) : currentInput + num; }
+      updateDisplay();
+    }
+
+    function inputDecimal() {
+      if (waitingForSecond) { currentInput = '0.'; waitingForSecond = false; }
+      else if (!currentInput.includes('.')) { currentInput += '.'; }
+      updateDisplay();
+    }
+
+    function setOp(op) {
+      var input = parseFloat(currentInput);
+      if (operator && !waitingForSecond) {
+        firstOperand = calculate(firstOperand, input, operator);
+        currentInput = String(firstOperand);
+      } else {
+        firstOperand = input;
+      }
+      operator = op;
+      waitingForSecond = true;
+      updateDisplay();
+    }
+
+    function calculate(a, b, op) {
+      switch (op) {
+        case 'add': return a + b;
+        case 'subtract': return a - b;
+        case 'multiply': return a * b;
+        case 'divide': return b === 0 ? 'Error' : a / b;
+        default: return b;
+      }
+    }
+
+    function equals() {
+      if (operator === null) return;
+      var input = parseFloat(currentInput);
+      var result = calculate(firstOperand, input, operator);
+      addHistory(formatNum(firstOperand) + ' ' + opSymbol(operator) + ' ' + formatNum(input), formatNum(result));
+      currentInput = String(result);
+      firstOperand = null; operator = null; waitingForSecond = false;
+      updateDisplay();
+      track('calculate', {});
+    }
+
+    function clearAll() { currentInput = '0'; firstOperand = null; operator = null; waitingForSecond = false; historyEntries = []; renderHistory(); updateDisplay(); }
+
+    function backspace() {
+      if (waitingForSecond || currentInput.length <= 1) { currentInput = '0'; }
+      else { currentInput = currentInput.slice(0, -1); }
+      updateDisplay();
+    }
+
+    function percent() {
+      currentInput = String(parseFloat(currentInput) / 100);
+      updateDisplay();
+    }
+
+    function toggleSign() {
+      var n = parseFloat(currentInput);
+      currentInput = String(-n);
+      updateDisplay();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key >= '0' && e.key <= '9') inputNumber(e.key);
+      else if (e.key === '.') inputDecimal();
+      else if (e.key === '+') setOp('add');
+      else if (e.key === '-') setOp('subtract');
+      else if (e.key === '*') setOp('multiply');
+      else if (e.key === '/') { e.preventDefault(); setOp('divide'); }
+      else if (e.key === 'Enter') equals();
+      else if (e.key === 'Backspace') backspace();
+      else if (e.key === 'Escape') clearAll();
+    });
+  </script>
+</body>
+</html>

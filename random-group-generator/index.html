@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Random Group Generator - Split Names into Groups Online Free</title>
-  <meta name="description" content="Free random group generator. Paste a list of names, choose how many groups you want, and instantly split them into random, balanced groups. Copy results with one click." />
+  <meta name="description" content="Free random group generator. Paste a list of names, pick how many groups, and instantly split them into random, balanced teams. Copy with one click." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://c57458005-cmd.github.io/free-tools/random-group-generator/" />
 
@@ -73,16 +73,14 @@
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
     .wrap { max-width: 760px; margin: 0 auto; padding: 16px; }
     header { padding: 18px 0 6px; }
-    .brand { font-weight: 700; font-size: 18px; color: var(--accent); text-decoration: none; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+
+    .title { font-size:24px; letter-spacing:-0.02em; margin:0; line-height:1.3; }
+    .sub { color:var(--muted); margin-top:6px; font-size:15px; }
     .back { display: inline-block; margin-right: 10px; padding: 6px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; vertical-align: middle; }
     .back:hover { color: var(--accent); border-color: var(--accent); }
-    .nav { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
-    .nav a { font-size: 13px; color: var(--muted); text-decoration: none; background: var(--card); border: 1px solid var(--border); padding: 5px 12px; border-radius: 999px; }
-    .nav a:hover { color: var(--accent); border-color: var(--accent); }
-    .hero { padding: 22px 0 14px; }
-    h1 { font-size: 28px; line-height: 1.25; letter-spacing: -0.02em; }
-    .hero p { color: var(--muted); margin-top: 8px; font-size: 16px; }
-    .tool { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: 0 1px 3px rgba(15,23,42,.05); }
+h1 { font-size: 28px; line-height: 1.25; letter-spacing: -0.02em; word-break: break-word; overflow-wrap: anywhere; }
+.tool { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: 0 1px 3px rgba(15,23,42,.05); }
     textarea, input[type=number] { width: 100%; border: 1px solid var(--border); border-radius: 10px; padding: 12px; font-size: 15px; font-family: inherit; color: var(--ink); }
     textarea { min-height: 150px; resize: vertical; }
     textarea:focus, input[type=number]:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
@@ -90,18 +88,17 @@
     .controls label { font-size: 14px; color: var(--muted); }
     .controls input[type=number] { width: 90px; display: inline-block; }
     .btns { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-    button { border: 1px solid var(--border); background: #fff; color: var(--ink); padding: 9px 16px; border-radius: 9px; font-size: 14px; cursor: pointer; transition: all .15s ease; }
+    button { border: 1px solid var(--border); background: #fff; color: var(--ink); padding: 9px 16px; border-radius: 9px; font-size: 14px; cursor: pointer; transition: all .15s ease; min-height: 40px; }
     button:hover { border-color: var(--accent); color: var(--accent); }
-    button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
-    button.primary:hover { background: var(--accent-dark); color: #fff; }
+    button.primary { background: #2563eb; border-color: #2563eb; color: #fff; font-weight: 600; }
+    button.primary:hover { background: #1d4ed8; color: #fff; }
     .meta { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
     .groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
     .group { background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
     .group h3 { font-size: 14px; color: var(--accent); margin-bottom: 8px; }
     .group ul { list-style: none; padding: 0; }
     .group li { font-size: 14px; padding: 2px 0; }
-    .ad { margin: 18px 0; border: 1px dashed var(--border); border-radius: var(--radius); background: #eef2f7; min-height: 90px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 13px; text-align: center; padding: 10px; }
-    section { margin-top: 26px; }
+section { margin-top: 26px; }
     h2 { font-size: 20px; letter-spacing: -0.01em; margin-bottom: 10px; }
     section p, section li { color: #334155; font-size: 15px; }
     ul { padding-left: 20px; }
@@ -113,27 +110,20 @@
     summary { cursor: pointer; font-weight: 600; font-size: 15px; }
     details p { margin-top: 8px; color: #475569; }
     footer { margin: 30px 0 24px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; text-align: center; }
-    @media (max-width: 480px) { h1 { font-size: 23px; } }
+    @media (max-width: 480px) { h1 { font-size: 23px; } button { min-height: 44px; padding: 10px 14px; }
+}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <a class="back" href="../">← All Tools</a>
-      <a class="brand" href="../">FreeTools</a>
-      <nav class="nav" aria-label="Related tools">
-        <a href="../case-converter/">Case Converter</a>
-        <a href="../wheel-spinner/">Wheel Spinner</a>
-        <a href="./">Group Generator</a>
-      </nav>
+      <div class="topbar">
+        <h1 class="title">Group Generator</h1>
+        <a class="back" href="../">← All Tools</a>
+      </div>
+      <p class="sub">Split a list of names into random, balanced groups in one click.</p>
     </header>
-
-    <div class="hero">
-      <h1>Random Group Generator — Split Names into Groups Online Free</h1>
-      <p>Paste your list of names and instantly split them into random, balanced groups. Perfect for classrooms, teams and events.</p>
-    </div>
-
-    <main>
+<main>
       <div class="tool">
         <textarea id="names" placeholder="Enter one name per line:&#10;Alice&#10;Bob&#10;Carol&#10;David&#10;Eve&#10;Frank" aria-label="List of names"></textarea>
         <div class="controls">
@@ -146,10 +136,7 @@
         <div class="meta" id="meta" aria-live="polite"></div>
         <div class="groups" id="groups" aria-label="Generated groups"></div>
       </div>
-
-      <div class="ad" role="complementary" aria-label="Advertisement">AdSense placeholder — paste your ad unit here after approval</div>
-
-      <section id="about">
+<section id="about">
         <h2>How to Randomly Split Names into Groups</h2>
         <p>Type or paste your list of names into the box (one name per line), pick how many groups you want, then click "Generate Groups". The tool shuffles the order and distributes names evenly, so every group is as balanced as possible. Results update instantly, right in your browser — nothing is uploaded.</p>
       </section>
@@ -181,6 +168,14 @@
         <details>
           <summary>Is this random group generator free?</summary>
           <p>Yes. This group generator is 100% free, runs in your browser, and never requires a sign-up or download.</p>
+        </details>
+        <details>
+          <summary>Does this group generator work on mobile?</summary>
+          <p>Yes. The group generator is fully responsive and works on phones, tablets and desktops alike.</p>
+        </details>
+        <details>
+          <summary>Are my names kept private?</summary>
+          <p>Yes. Group splitting happens locally in your browser. Your list of names never leaves your device and is never stored or uploaded.</p>
         </details>
       </section>
     </main>

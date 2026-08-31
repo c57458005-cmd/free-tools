@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FreeTools - Free Online Tools: Case Converter, Group Generator, Wheel Spinner</title>
-  <meta name="description" content="Free online tools. Convert text case, randomly split names into groups, and spin a wheel to pick a winner. Fast, free, no sign-up." />
+  <title>FreeTools - Free Online Tools: Calculator &amp; Case Converter</title>
+  <meta name="description" content="Free online tools: case converter, random group generator, wheel spinner, password generator and more. Fast, free, no sign-up, works in your browser." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://c57458005-cmd.github.io/free-tools/" />
 
-  <!-- Google Analytics 4 — replace G-4W9M7STTLM with your Measurement ID -->
+  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W9M7STTLM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,10 +17,30 @@
     gtag('config', 'G-4W9M7STTLM');
   </script>
 
+  <!-- JSON-LD: ItemList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "FreeTools",
+    "url": "https://c57458005-cmd.github.io/free-tools/",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Calculator", "url": "https://c57458005-cmd.github.io/free-tools/calculator/" },
+      { "@type": "ListItem", "position": 2, "name": "Case Converter", "url": "https://c57458005-cmd.github.io/free-tools/case-converter/" },
+      { "@type": "ListItem", "position": 3, "name": "Random Group Generator", "url": "https://c57458005-cmd.github.io/free-tools/random-group-generator/" },
+      { "@type": "ListItem", "position": 4, "name": "Wheel Spinner", "url": "https://c57458005-cmd.github.io/free-tools/wheel-spinner/" },
+      { "@type": "ListItem", "position": 5, "name": "Random Number Generator", "url": "https://c57458005-cmd.github.io/free-tools/random-number-generator/" },
+      { "@type": "ListItem", "position": 6, "name": "Password Generator", "url": "https://c57458005-cmd.github.io/free-tools/password-generator/" },
+      { "@type": "ListItem", "position": 7, "name": "Word Counter", "url": "https://c57458005-cmd.github.io/free-tools/word-counter/" },
+      { "@type": "ListItem", "position": 8, "name": "Percentage Calculator", "url": "https://c57458005-cmd.github.io/free-tools/percentage-calculator/" }
+    ]
+  }
+  </script>
+
   <style>
     :root { --bg:#f6f8fb; --card:#fff; --ink:#1a202c; --muted:#64748b; --accent:#2563eb; --border:#e2e8f0; --radius:14px; }
     * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.7; -webkit-font-smoothing:antialiased; }
     .wrap { max-width:760px; margin:0 auto; padding:24px 16px; }
     header { text-align:center; padding:26px 0 10px; }
     h1 { font-size:30px; letter-spacing:-0.02em; }
@@ -28,39 +48,121 @@
     .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:14px; margin-top:28px; }
     .card { display:block; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px; text-decoration:none; color:var(--ink); transition:all .15s ease; }
     .card:hover { border-color:var(--accent); transform:translateY(-2px); box-shadow:0 4px 12px rgba(15,23,42,.06); }
+    .card .icon { font-size:30px; line-height:1; margin-bottom:10px; }
     .card h2 { font-size:18px; color:var(--accent); margin-bottom:6px; }
     .card p { font-size:14px; color:var(--muted); }
-    footer { margin:36px 0 24px; text-align:center; color:var(--muted); font-size:13px; }
+    section { margin-top:32px; }
+    h2 { font-size:20px; letter-spacing:-0.01em; margin-bottom:10px; }
+    section p, section li { color:#334155; font-size:15px; }
+    ul { padding-left:20px; }
+    .tools-list { list-style:none; padding:0; }
+    .tools-list li { margin-bottom:14px; }
+    .tools-list a { font-weight:600; color:var(--accent); text-decoration:none; }
+    .tools-list a:hover { text-decoration:underline; }
+    details { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px 14px; margin-bottom:10px; }
+    summary { cursor:pointer; font-weight:600; font-size:15px; }
+    details p { margin-top:8px; color:#475569; }
+    footer { margin:36px 0 24px; padding-top:16px; border-top:1px solid var(--border); color:var(--muted); font-size:13px; text-align:center; }
+    @media (max-width: 640px) {
+      .wrap { padding:12px 12px; }
+      header { padding:12px 0 4px; }
+      h1 { font-size:24px; }
+      .sub { font-size:14px; margin-top:6px; }
+      .grid { grid-template-columns:repeat(2,1fr); gap:10px; margin-top:18px; }
+      .card { padding:14px 12px; }
+      .card .icon { font-size:22px; margin-bottom:6px; }
+      .card h2 { font-size:15px; margin-bottom:4px; }
+      .card p { font-size:12px; }
+      section { margin-top:24px; }
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <h1>FreeTools</h1>
-      <p class="sub">Free online tools for everyday work — no sign-up, works right in your browser.</p>
+      <p class="sub">Free online tools for everyday work — no sign-up, no download, works right in your browser.</p>
     </header>
 
-    <main class="grid">
-      <a class="card" href="case-converter/">
-        <h2>Case Converter</h2>
-        <p>Convert text to uppercase, lowercase, title case, sentence case and more.</p>
-      </a>
-      <a class="card" href="random-group-generator/">
-        <h2>Random Group Generator</h2>
-        <p>Split a list of names into random, balanced groups in one click.</p>
-      </a>
-      <a class="card" href="wheel-spinner/">
-        <h2>Wheel Spinner</h2>
-        <p>Spin a wheel of names to pick a random winner or decision.</p>
-      </a>
-      <a class="card" href="random-number-generator/">
-        <h2>Random Number Generator</h2>
-        <p>Generate random numbers in any range, with optional no-repeat mode.</p>
-      </a>
-      <a class="card" href="password-generator/">
-        <h2>Password Generator</h2>
-        <p>Create strong, secure, random passwords in one click.</p>
-      </a>
+    <main>
+      <div class="grid">
+        <a class="card" href="calculator/">
+          <div class="icon">🧮</div>
+          <h2>Calculator</h2>
+          <p>Free online calculator for add, subtract, multiply and divide.</p>
+        </a>
+        <a class="card" href="case-converter/">
+          <div class="icon">🔤</div>
+          <h2>Case Converter</h2>
+          <p>Convert text to uppercase, lowercase, title case, sentence case and more.</p>
+        </a>
+        <a class="card" href="random-group-generator/">
+          <div class="icon">👥</div>
+          <h2>Random Group Generator</h2>
+          <p>Split a list of names into random, balanced groups in one click.</p>
+        </a>
+        <a class="card" href="wheel-spinner/">
+          <div class="icon">🎡</div>
+          <h2>Wheel Spinner</h2>
+          <p>Spin a wheel of names to pick a random winner or decision.</p>
+        </a>
+        <a class="card" href="random-number-generator/">
+          <div class="icon">🎲</div>
+          <h2>Random Number Generator</h2>
+          <p>Generate random numbers in any range, with optional no-repeat mode.</p>
+        </a>
+        <a class="card" href="password-generator/">
+          <div class="icon">🔒</div>
+          <h2>Password Generator</h2>
+          <p>Create strong, secure, random passwords in one click.</p>
+        </a>
+        <a class="card" href="word-counter/">
+          <div class="icon">📝</div>
+          <h2>Word Counter</h2>
+          <p>Count words, characters, sentences and reading time instantly.</p>
+        </a>
+        <a class="card" href="percentage-calculator/">
+          <div class="icon">📊</div>
+          <h2>Percentage Calculator</h2>
+          <p>Calculate percentages: X% of Y, what percent, and % change.</p>
+        </a>
+      </div>
+
+      <section id="about">
+        <h2>Free Online Tools for Everyday Work</h2>
+        <p>FreeTools is a collection of simple, fast and free browser-based tools. Whether you need to convert text case, split names into random groups, spin a wheel of names, generate a random number, or create a strong password — every tool runs entirely in your browser, so nothing you type is ever uploaded or stored.</p>
+        <p>All tools are free to use and require no account or installation. Just open the tool you need, do your work, and copy the result.</p>
+      </section>
+
+      <section id="tools">
+        <h2>All Free Tools</h2>
+        <ul class="tools-list">
+          <li><a href="calculator/">Calculator</a> — free online calculator for addition, subtraction, multiplication and division.</li>
+          <li><a href="case-converter/">Case Converter</a> — change text between uppercase, lowercase, title case, sentence case, camelCase, PascalCase, snake_case and kebab-case.</li>
+          <li><a href="random-group-generator/">Random Group Generator</a> — split a list of names into random, balanced teams or groups for classrooms, workshops and events.</li>
+          <li><a href="wheel-spinner/">Wheel Spinner</a> — spin a wheel of names to pick a random winner, student or decision.</li>
+          <li><a href="random-number-generator/">Random Number Generator</a> — generate random numbers in any range, with optional unique (no-repeat) mode.</li>
+          <li><a href="password-generator/">Password Generator</a> — create strong, secure random passwords with mixed character types.</li>
+          <li><a href="word-counter/">Word Counter</a> — count words, characters, sentences, paragraphs and reading time instantly.</li>
+          <li><a href="percentage-calculator/">Percentage Calculator</a> — calculate X% of Y, what percent one number is of another, and percentage change.</li>
+        </ul>
+      </section>
+
+      <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>Are these tools really free?</summary>
+          <p>Yes. Every tool on FreeTools is 100% free, runs in your browser, and never requires a sign-up, account or download.</p>
+        </details>
+        <details>
+          <summary>Do my text and data stay private?</summary>
+          <p>Yes. All tools process everything locally in your browser. Your text, names and passwords never leave your device.</p>
+        </details>
+        <details>
+          <summary>Do these tools work on mobile?</summary>
+          <p>Yes. Every tool is responsive and works on phones, tablets and desktops alike.</p>
+        </details>
+      </section>
     </main>
 
     <footer><p>FreeTools — free online tools.</p></footer>

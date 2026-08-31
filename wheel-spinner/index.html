@@ -73,29 +73,30 @@
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
     .wrap { max-width: 760px; margin: 0 auto; padding: 16px; }
     header { padding: 18px 0 6px; }
-    .brand { font-weight: 700; font-size: 18px; color: var(--accent); text-decoration: none; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+
+    .title { font-size:24px; letter-spacing:-0.02em; margin:0; line-height:1.3; }
+    .sub { color:var(--muted); margin-top:6px; font-size:15px; }
     .back { display: inline-block; margin-right: 10px; padding: 6px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; vertical-align: middle; }
     .back:hover { color: var(--accent); border-color: var(--accent); }
-    .nav { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
-    .nav a { font-size: 13px; color: var(--muted); text-decoration: none; background: var(--card); border: 1px solid var(--border); padding: 5px 12px; border-radius: 999px; }
-    .nav a:hover { color: var(--accent); border-color: var(--accent); }
-    .hero { padding: 22px 0 14px; }
-    h1 { font-size: 28px; line-height: 1.25; letter-spacing: -0.02em; }
-    .hero p { color: var(--muted); margin-top: 8px; font-size: 16px; }
-    .tool { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: 0 1px 3px rgba(15,23,42,.05); }
+h1 { font-size: 28px; line-height: 1.25; letter-spacing: -0.02em; word-break: break-word; overflow-wrap: anywhere; }
+.tool { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: 0 1px 3px rgba(15,23,42,.05); }
     .wheel-wrap { text-align: center; margin-bottom: 16px; }
+    .spin-wrap { text-align: center; margin: 2px 0 12px; }
+    .spin-btn { font-size: 17px; padding: 12px 44px; min-height: 50px; }
     canvas { max-width: 100%; }
     textarea { width: 100%; min-height: 120px; resize: vertical; border: 1px solid var(--border); border-radius: 10px; padding: 12px; font-size: 15px; font-family: inherit; color: var(--ink); }
     textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
     .btns { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
-    button { border: 1px solid var(--border); background: #fff; color: var(--ink); padding: 9px 16px; border-radius: 9px; font-size: 14px; cursor: pointer; transition: all .15s ease; }
+    button { border: 1px solid var(--border); background: #fff; color: var(--ink); padding: 9px 16px; border-radius: 9px; font-size: 14px; cursor: pointer; transition: all .15s ease; min-height: 40px; }
     button:hover { border-color: var(--accent); color: var(--accent); }
-    button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
-    button.primary:hover { background: var(--accent-dark); color: #fff; }
+    button.primary { background: #2563eb; border-color: #2563eb; color: #fff; font-weight: 600; }
+    button.primary:hover { background: #1d4ed8; color: #fff; }
     .meta { font-size: 14px; color: var(--muted); margin-bottom: 8px; text-align: center; }
+    .results { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 10px; }
+    .result-chip { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 5px 8px; font-size: 13px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .result { font-size: 18px; font-weight: 700; text-align: center; color: var(--accent); min-height: 28px; margin-top: 4px; }
-    .ad { margin: 18px 0; border: 1px dashed var(--border); border-radius: var(--radius); background: #eef2f7; min-height: 90px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 13px; text-align: center; padding: 10px; }
-    section { margin-top: 26px; }
+section { margin-top: 26px; }
     h2 { font-size: 20px; letter-spacing: -0.01em; margin-bottom: 10px; }
     section p, section li { color: #334155; font-size: 15px; }
     ul { padding-left: 20px; }
@@ -107,46 +108,41 @@
     summary { cursor: pointer; font-weight: 600; font-size: 15px; }
     details p { margin-top: 8px; color: #475569; }
     footer { margin: 30px 0 24px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; text-align: center; }
-    @media (max-width: 480px) { h1 { font-size: 23px; } }
+    @media (max-width: 480px) { h1 { font-size: 23px; } button { min-height: 44px; padding: 10px 14px; }
+      .results { grid-template-columns: repeat(3, 1fr); }
+      .result-chip { white-space: normal; overflow: visible; text-overflow: clip; word-break: break-word; }
+}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <a class="back" href="../">← All Tools</a>
-      <a class="brand" href="../">FreeTools</a>
-      <nav class="nav" aria-label="Related tools">
-        <a href="../case-converter/">Case Converter</a>
-        <a href="../random-group-generator/">Group Generator</a>
-        <a href="./">Wheel Spinner</a>
-      </nav>
+      <div class="topbar">
+        <h1 class="title">Wheel Spinner</h1>
+        <a class="back" href="../">← All Tools</a>
+      </div>
+      <p class="sub">Spin a wheel of names to pick a random winner or decision.</p>
     </header>
-
-    <div class="hero">
-      <h1>Wheel Spinner — Random Name Picker Wheel Online Free</h1>
-      <p>Add names or options, spin the wheel, and let it pick a random winner. Great for classrooms, raffles and quick decisions.</p>
-    </div>
-
-    <main>
+<main>
       <div class="tool">
         <div class="wheel-wrap">
           <canvas id="wheel" width="440" height="440" role="img" aria-label="Spinning wheel of names"></canvas>
         </div>
+        <div class="spin-wrap">
+          <button type="button" class="primary spin-btn" onclick="buildAndSpin()">Spin</button>
+        </div>
         <div class="result" id="result" aria-live="polite">Spin the wheel to pick a winner</div>
         <div class="meta" id="meta"></div>
-        <textarea id="options" placeholder="Enter one option per line:&#10;Alice&#10;Bob&#10;Carol&#10;David&#10;Eve" aria-label="Wheel options"></textarea>
+        <div class="results" id="results" aria-label="Spin history"></div>
+        <textarea id="options" aria-label="Wheel options">Alice, Bob, Carol, David, Eve, Frank, Grace, Henry, Ivy, Jack, Kate, Liam</textarea>
         <div class="btns">
-          <button type="button" class="primary" onclick="buildAndSpin()">Spin</button>
           <button type="button" onclick="removeWinner()">Remove Winner</button>
           <button type="button" onclick="resetAll()">Reset</button>
         </div>
       </div>
-
-      <div class="ad" role="complementary" aria-label="Advertisement">AdSense placeholder — paste your ad unit here after approval</div>
-
-      <section id="about">
+<section id="about">
         <h2>How to Use the Wheel Spinner</h2>
-        <p>Type your names or choices into the box (one per line), then click "Spin". The wheel spins and lands on a random entry. Use "Remove Winner" to take the picked entry out and spin again — perfect for picking multiple winners without repeats.</p>
+        <p>Type your names or choices into the box — separate them with commas (or one per line). Then click "Spin". The wheel spins and lands on a random entry. Use "Remove Winner" to take the picked entry out and spin again — perfect for picking multiple winners without repeats.</p>
       </section>
 
       <section id="use-cases">
@@ -171,11 +167,19 @@
         <h2>Frequently Asked Questions</h2>
         <details>
           <summary>How do I spin a wheel of names?</summary>
-          <p>Type your names or options into the box (one per line), then click "Spin". The wheel rotates and stops on a random entry. You can remove a winner and spin again.</p>
+          <p>Type your names or options into the box, separated by commas or new lines, then click "Spin". The wheel rotates and stops on a random entry. You can remove a winner and spin again.</p>
         </details>
         <details>
           <summary>Is this wheel spinner free?</summary>
           <p>Yes. This wheel spinner is 100% free, runs in your browser, and never requires a sign-up or download.</p>
+        </details>
+        <details>
+          <summary>Does this wheel spinner work on mobile?</summary>
+          <p>Yes. The wheel spinner is fully responsive and works on phones, tablets and desktops alike.</p>
+        </details>
+        <details>
+          <summary>Are my names kept private?</summary>
+          <p>Yes. The wheel runs locally in your browser. Your names never leave your device and are never stored or uploaded.</p>
         </details>
       </section>
     </main>
@@ -186,13 +190,21 @@
   <script>
     var canvas = document.getElementById('wheel');
     var ctx = canvas.getContext('2d');
-    var colors = ['#db2777','#7c3aed','#2563eb','#059669','#d97706','#dc2626','#0891b2','#65a30d'];
+    var RAINBOW = ['#ef4444','#f97316','#facc15','#22c55e','#06b6d4','#3b82f6','#a855f7','#ec4899'];
+    var colors = RAINBOW;
+    var DEFAULT_OPTIONS = ['Alice','Bob','Carol','David','Eve','Frank','Grace','Henry','Ivy','Jack','Kate','Liam'];
     var options = [];
     var currentAngle = 0;
     var spinning = false;
 
+    function centerOnFirst() {
+      var n = options.length || 1;
+      var slice = (Math.PI * 2) / n;
+      currentAngle = (Math.PI * 2) - (slice / 2);
+    }
+
     function getOptions() {
-      return document.getElementById('options').value.split('\n').map(function(s){ return s.trim(); }).filter(Boolean);
+      return document.getElementById('options').value.split(/[\n,，]+/).map(function(s){ return s.trim(); }).filter(Boolean);
     }
 
     function drawWheel(angle) {
@@ -248,6 +260,17 @@
       return idx;
     }
 
+    var resultCount = 0;
+
+    function addResult(name) {
+      resultCount++;
+      var results = document.getElementById('results');
+      var chip = document.createElement('div');
+      chip.className = 'result-chip';
+      chip.textContent = resultCount + '. ' + name;
+      results.appendChild(chip);
+    }
+
     function animate(total, duration) {
       if (!spinning) return;
       var start = null;
@@ -260,12 +283,18 @@
         if (t < 1) {
           requestAnimationFrame(step);
         } else {
+          var n = options.length;
+          var slice = (Math.PI * 2) / n;
           currentAngle = (currentAngle + total) % (Math.PI * 2);
-          var idx = pickWinner();
-          document.getElementById('result').textContent = 'Winner: ' + options[idx];
-          document.getElementById('meta').textContent = options.length + ' options on the wheel.';
+          // 指针 (0 rad) 自然落在哪个扇区
+          var a = ((currentAngle % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
+          var idx = Math.floor(((Math.PI * 2 - a) % (Math.PI * 2)) / slice) % n;
+          drawWheel(currentAngle);
+          var winner = options[idx];
+          document.getElementById('result').textContent = 'Winner: ' + winner;
+          addResult(winner);
           spinning = false;
-          track('spin', { options: options.length, winner: options[idx] });
+          track('spin', { options: n, winner: winner });
         }
       }
       requestAnimationFrame(step);
@@ -278,7 +307,7 @@
       spinning = true;
       document.getElementById('result').textContent = 'Spinning…';
       drawWheel(currentAngle);
-      var spins = 5 + Math.floor(Math.random() * 3);
+      var spins = 5 + Math.random() * 3; // 非整数圈，落点随机
       animate(spins * Math.PI * 2, 3000);
     }
 
@@ -286,7 +315,7 @@
       var idx = pickWinner();
       if (options.length > 0) {
         var removed = options.splice(idx, 1);
-        document.getElementById('options').value = options.join('\n');
+        document.getElementById('options').value = options.join(', ');
         document.getElementById('result').textContent = 'Removed: ' + removed[0];
         drawWheel(currentAngle);
         document.getElementById('meta').textContent = options.length + ' options left.';
@@ -294,13 +323,15 @@
     }
 
     function resetAll() {
-      document.getElementById('options').value = '';
-      options = [];
-      currentAngle = 0;
+      document.getElementById('options').value = DEFAULT_OPTIONS.join(', ');
+      options = DEFAULT_OPTIONS.slice();
       spinning = false;
+      resultCount = 0;
+      document.getElementById('results').innerHTML = '';
+      centerOnFirst();
       document.getElementById('result').textContent = 'Spin the wheel to pick a winner';
-      document.getElementById('meta').textContent = '';
-      drawWheel(0);
+      document.getElementById('meta').textContent = options.length + ' options on the wheel.';
+      drawWheel(currentAngle);
     }
 
     document.getElementById('options').addEventListener('input', function() {
@@ -308,7 +339,12 @@
       drawWheel(currentAngle);
     });
 
-    drawWheel(0);
+    // 初始化：默认 12 项，指针居中扇区，打开即用
+    options = DEFAULT_OPTIONS.slice();
+    document.getElementById('options').value = DEFAULT_OPTIONS.join(', ');
+    document.getElementById('meta').textContent = options.length + ' options on the wheel.';
+    centerOnFirst();
+    drawWheel(currentAngle);
   </script>
 </body>
 </html>
